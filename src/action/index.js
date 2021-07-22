@@ -1,8 +1,8 @@
- const deleteData = (value) => {
-    return{
-        type: 'DeleteData',
+const submitData = (value) => {
+    return {
+        type: "submitData",
         payload: value
     }
 }
 
-export default deleteData;
+export default submitData;
