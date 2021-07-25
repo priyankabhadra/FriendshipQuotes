@@ -1,39 +1,41 @@
-let initialState = {
-    bookDetails : [{
-        bookName: "Agni Veena",
-        bookAuthor: "Kazi Nasrul Islam",
-        bookDescription: "Indian Literature, Sahitya Akademi’s bimonthly journal, is India’s oldest and the only journal of its kind featuring translations in English of poetry, fiction, drama and criticism from twenty-three Indian languages besides original writing in English.",
-        bookCount: 1,
-        bookId: 1
-     },
-     {
-         bookName: "Time Machine",
-         bookAuthor: "H.G. Wells",
-         bookDescription: "The time machine is a science fiction novel by H.G.WELLS , published in 1895 and written as a frame narrative. The narrator feels differently, but the overwhelming message of the book can be construed as a warning against hubris and faith in progress.",
-         bookCount: 2,
-         bookId: 2
-      },
-      {
-         bookName: "Chitra",
-         bookAuthor: "R.N.Tagore",
-         bookDescription: "Today I can only offer you Chitra, the daughter of a king” and to this Arjuna Tagore is known for his aesthetic and pantheistic attitude and his spiritually inclined mind. The source for this play is Mahabharata – an episode from Arjuna’s life during his vanvaas (forest life exile).",
-         bookCount: 3,
-         bookId: 3
-      },
-      {
-         bookName: "Bisarjan",
-         bookAuthor: "R.N.Tagore",
-         bookDescription: "The play centers on a ban: the king of Tripura, Govinda Manik, has banned ritual sacrifice and slaughter at the altar of the goddess. His power threatened by the ban, Raghupati, the high priest, orchestrates opposition.",
-         bookCount: 4,
-         bookId: 4
-      },
-      {
-         bookName: "Divine Comedy",
-         bookAuthor: "Dante",
-         bookDescription: "The main idea in Dante's The Divine Comedy is essentially how people learn to attain salvation. It gives a long narration of how Dante's pilgrim goes through hell in Inferno and gives such a figurative picture of how sinners suffer without any hope of redemption.",
-         bookCount: 5,
-         bookId: 5
-      },
- ]}
+let initialDetails = {
+   values : [{
+      frienshipQuotes : "My friend… thanks for tolerating my idiosyncrasies and crazy habits. You might not know this, but you helped me find happiness in being the person that I really am.",
+      id : 1
+   },
+   {
+      frienshipQuotes : "I don’t know how I can say thank you to a friend who understands the all the things I never say and never says anything I don’t understand.",
+      id : 2
+   },
+   {
+      frienshipQuotes : "I don’t know how we can say thank you to a friend who understands the all the things I never say and never says anything I don’t understand.",
+      id : 3
+   },
+   // {
+   //    frienshipQuotes : "I don’t regret the things I have done and the thing I didn’t do, for somewhere along the way, I must have done something right because I ended up with a friend like you."
+   // },
+   // {
+   //    frienshipQuotes : "I don’t know what loneliness means, because sad and alone, I’ve never been. Through all of life’s murkiest corners and bends, I’ve always sailed through, because of you, my friend. Thanks."
+   // },
+   // {
+   //    frienshipQuotes : "Thanks for knowing exactly when to tell me what I want to hear, when I want to hear it the most."
+   // },
+   // {
+   //    frienshipQuotes : "A boyfriend’s love is special. But a best friend’s love is unconditional."
+   // },
+   // {
+   //    frienshipQuotes : "I would rather thank you time and again for being a wonderful friend in every way than belittle our friendship by saying thanks only once a year on Friendship’s Day. Thank you."
+   // },
+   // {
+   //    frienshipQuotes : "An empty stomach needs food, an empty brain needs knowledge, an empty house needs a family, and an empty heart needs love. But then, an empty life needs a friend, thanks for filling in."
+   // },
+   // {
+   //    frienshipQuotes : "Our friendship is both an asset and a debt – an asset in my life and a debt that I will always owe forever."
+   // },
+   // {
+   //    frienshipQuotes : "Sunshine or rain, friends always soothe the pain. Morning or night, best friends make everything alright."
+   // }
+]
+}
 
- export default initialState;
+export default initialDetails;

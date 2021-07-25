@@ -1,62 +1,50 @@
-import React, {useState} from 'react';
-import Radio from '@material-ui/core/Radio';
-import submitData from './action/index';
-import { useDispatch, useSelector } from 'react-redux';
+import React, {useState} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import deleteCard from "./action/index1";
+import EditForm from "./component/EditForm";
+import AddForm from "./component/AddForm";
 
 const App = () => {
-  const[fullName, setFullName] = useState('');
-  const[rollNo, setRollNo] = useState('');
-  const[selectedValue, setSelectedValue] = React.useState('yes');
-  const[value, setValue] = useState(false);
-  const[firstValue, setFirstValue] = useState(true);
-  const dispatch = useDispatch();
-  let fullNameAgain = null, selectedValueAgain = null;
-  fullNameAgain = useSelector(state => state.fullName);
-  selectedValueAgain = useSelector((state) => state.selectedValue);
+    const [isEdit, isSetEdit] = useState(false);
+    const [isAdd, isSetAdd] = useState(false);
+    const [value1, setNewValue1] = useState('');
+    const dispatch = useDispatch();
+    const value = useSelector(state => state.values);
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+    function onDelete(id) {
+        dispatch(deleteCard(id));
+        isSetEdit(false);
+        isSetAdd(false);
+    }
 
-  function onSubmit(){
-    const value = 
-       {fullName, rollNo, selectedValue} 
-       dispatch(submitData(value));  
-       setValue(true);
-       setFirstValue(false);
-  }
-  console.log(fullNameAgain);
-  console.log(selectedValueAgain);
+    function onEdit(id) {
+        isSetEdit(true);
+        isSetAdd(false);
+        let newValue = value.filter(f => f.id == id);
+        setNewValue1(newValue);
+    }
 
-  return (
-    <>
-    {firstValue ? (<>
-    <h2>Attandance Sheet</h2>
-    <h3>Please Fill This Form</h3>
-    <p>Full Name: </p>
-    <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required></input>
-    <br/>
-    <p>Roll No: </p>
-    <input type="number" value={rollNo} onChange={(e) => setRollNo(e.target.value)} required></input>
-    <br/>
-    <p>Are you available today?</p>
-    Yes<Radio
-        checked={selectedValue === 'yes'}
-        onChange={handleChange}
-        value="yes"
-      />
-     No<Radio
-        checked={selectedValue === 'no'}
-        onChange={handleChange}
-        value="no"
-      />
-    <br/>
-    <button onClick={() => onSubmit()}>Submit</button>
-      </>): (<> {fullNameAgain && selectedValueAgain && value &&
-        <p>{fullNameAgain}, {selectedValueAgain} present</p>
-      }</>)}
-    </>
-  )
+    function onAdd() {
+        isSetAdd(true);
+    }
+
+    return(
+        <>
+        {value.map((val)=> (
+            <>
+            <p>{val.frienshipQuotes}</p>
+            <button onClick={() => onEdit(val.id)}>Edit</button>
+            <button onClick={() => onDelete(val.id)}>Delete</button>
+            <button onClick={() => onAdd()}>Add</button>
+            <hr />
+            {isEdit && val.frienshipQuotes==value1[0].frienshipQuotes && <EditForm value1={value1} isSetEdit={isSetEdit}/>}
+            {isAdd && <AddForm isSetAdd={isSetAdd}/>}
+            </>
+        ))}
+        
+        
+        </>
+    )
 }
 
 export default App;
